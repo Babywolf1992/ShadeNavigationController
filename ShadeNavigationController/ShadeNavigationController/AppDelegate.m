@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ShadeNavigationController.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +18,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    ViewController *viewCtrl = [[ViewController alloc] init];
+    ShadeNavigationController *navigationCtrl = [[ShadeNavigationController alloc] initWithRootViewController:viewCtrl];
+    navigationCtrl.navigationBarColor = [UIColor orangeColor];
+    self.window.rootViewController = navigationCtrl;
     return YES;
 }
 
