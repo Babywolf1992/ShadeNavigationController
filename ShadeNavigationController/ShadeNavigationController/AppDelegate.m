@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ShadeNavigationController.h"
 #import "ViewController.h"
+#import "WFShadeNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -20,8 +21,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     ViewController *viewCtrl = [[ViewController alloc] init];
-    ShadeNavigationController *navigationCtrl = [[ShadeNavigationController alloc] initWithRootViewController:viewCtrl];
+    WFShadeNavigationController *navigationCtrl = [[WFShadeNavigationController alloc] initWithRootViewController:viewCtrl];
     navigationCtrl.navigationBarColor = [UIColor orangeColor];
+    navigationCtrl.number = 7;
     self.window.rootViewController = navigationCtrl;
     return YES;
 }

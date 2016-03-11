@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#define kMaxHeight 200
+#define kMixHeight 64
+
 @interface WFShadeNavigationController : UINavigationController
 
 @property (nonatomic, strong) UIView *shadeNavigationBar;
 @property (nonatomic, strong) UIColor *navigationBarColor;
+@property (nonatomic, assign) int number;
 
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController navigationBarColor:(UIColor *)color;
 

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "ShadeNavigationController.h"
+#import "WFShadeNavigationController.h"
 
 @interface ViewController ()<UIScrollViewDelegate>
 
@@ -35,7 +35,8 @@
     }else if (scale < 0) {
         scale = 0;
     }
-    ShadeNavigationController *navigationCtrl = (ShadeNavigationController *)self.navigationController;
+    NSLog(@"%f",scale);
+    WFShadeNavigationController *navigationCtrl = (WFShadeNavigationController *)self.navigationController;
     [navigationCtrl changeNavigationBarWithscale:scale];
 }
 
