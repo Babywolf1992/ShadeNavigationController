@@ -28,14 +28,14 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"%f,%f",scrollView.contentOffset.x,scrollView.contentOffset.y);
+//    NSLog(@"%f,%f",scrollView.contentOffset.x,scrollView.contentOffset.y);
     CGFloat scale = (100 - scrollView.contentOffset.y) / 100;
     if (scale >1) {
         scale = 1;
     }else if (scale < 0) {
         scale = 0;
     }
-    NSLog(@"%f",scale);
+//    NSLog(@"%f",scale);
     WFShadeNavigationController *navigationCtrl = (WFShadeNavigationController *)self.navigationController;
     [navigationCtrl changeNavigationBarWithscale:scale];
 }

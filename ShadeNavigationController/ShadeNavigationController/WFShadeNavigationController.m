@@ -56,24 +56,24 @@
     for (int i = 0; i < self.number; i++) {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, (kMaxHeight/self.number) * i, self.view.frame.size.width, kMaxHeight/self.number)];
         view.backgroundColor = color;
-        view.tag = i;
+        view.tag = i+100;
         [_shadeNavigationBar addSubview:view];
     }
     [self.view addSubview:self.shadeNavigationBar];
 }
 
 - (void)changeNavigationBarWithscale:(CGFloat)scale {
-//    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, (164-64)*scale+64);
-//    _shadeNavigationBar.frame = rect;
+    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, (164-64)*scale+64);
+    _shadeNavigationBar.frame = rect;
     for (int i = 0; i < self.number; i++) {
         if (scale > 0.5) {
             CGFloat currentscale = (scale - 0.5) * 2;
-            UIView *view = [_shadeNavigationBar viewWithTag:i];
+            UIView *view = [_shadeNavigationBar viewWithTag:i+100];
             CGRect rect = CGRectMake(0, (kMaxHeight/self.number) * i * scale, self.view.frame.size.width, kMaxHeight/self.number*currentscale);
             view.frame = rect;
         }else {
             CGFloat currentscale = 1 - (scale * 2);
-            UIView *view = [_shadeNavigationBar viewWithTag:i];
+            UIView *view = [_shadeNavigationBar viewWithTag:i+100];
             CGRect rect = CGRectMake(0, (kMixHeight/self.number) * i, self.view.frame.size.width, kMixHeight/self.number*currentscale);
             view.frame = rect;
         }
